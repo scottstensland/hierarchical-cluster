@@ -176,9 +176,9 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 			var curr_curve_samples = new flavor_typed_array(max_samples);
 
-			console.log("cutttt curr_curve_samples ....");
-			console.log(curr_curve_samples);
-			console.log("..... curr_curve_samples buuuutt");
+			// console.log("cutttt curr_curve_samples ....");
+			// console.log(curr_curve_samples);
+			// console.log("..... curr_curve_samples buuuutt");
 
 
 			for (var curr_sample = 0; curr_sample < max_samples; curr_sample++) {
@@ -263,8 +263,8 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 			// console.log("TTTOP --------- all_curves ", all_curves);
 
-			console.log("TTTOP --------- hierarchical_cluster ", hierarchical_cluster);
-			console.log("TTTOP --------- all_clusters ", all_clusters);
+			// console.log("TTTOP --------- hierarchical_cluster ", hierarchical_cluster);
+			// console.log("TTTOP --------- all_clusters ", all_clusters);
 
 			shared_utils.release_all_prop_from_object(curve_pairs_already_calculated);
 
@@ -276,31 +276,36 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 			var max_num_curves_this_depth = Object.keys(all_curves[curr_cluster_depth]).length;
 
-			console.log("max_num_curves_this_depth ", max_num_curves_this_depth);
+			var all_keys_this_depth = Object.keys(all_curves[curr_cluster_depth]);
+
+			// console.log("all_curves        keys    ", Object.keys(all_curves[curr_cluster_depth]));
+			// console.log("curr_cluster_depth        ", curr_cluster_depth);
+			// console.log("max_num_curves_this_depth ", max_num_curves_this_depth);
+			// console.log("max_num_curves_this_depth ", max_num_curves_this_depth);
+			// console.log("max_num_curves_this_depth ", max_num_curves_this_depth);
 
 
-			for (var curr_curve = 0; curr_curve < max_num_curves_this_depth; curr_curve++) {
+			// for (var curr_curve = 0; curr_curve < max_num_curves_this_depth; curr_curve++) {
+			for (var index_outer = 0; index_outer < max_num_curves_this_depth; index_outer++) {
 
-				console.log("\n      ", curr_curve, " <><><>   <><><>   <><><>   curr_curve <><><>   <><><>   <><><>\n");
+				curr_curve = all_keys_this_depth[index_outer];
 
-				// var curr_cluster_key = curr_cluster_depth + ":" + curr_curve;
+				// console.log("\n", curr_cluster_depth, curr_curve, " <><><>   curr_curve   <><><>\n");
 
-				// var curr_curve_samples = all_curves[curr_cluster_key];
 				var curr_curve_samples = all_curves[curr_cluster_depth][curr_curve];
 
 
-				// console.log("EARLY DAYS curr_curve_samples ", curr_curve_samples);
-				// console.log("... and NO moreeeeeeeeeeeeeee\n\n");
-
-
+				// console.log("EARLY DAYS curr_curve ", curr_curve, 
+				// 			" curr_curve_samples ", curr_curve_samples);
 
 				var min_distance = 99999.99;
 				var closest_other_inner_curve;
 				var curr_distance;
 
-				// var curr_other_cluster_key;
+				// for (var curr_inner_curve = 0; curr_inner_curve < max_num_curves_this_depth; curr_inner_curve++) {
+				for (var index_inner = 0; index_inner < max_num_curves_this_depth; index_inner++) {
 
-				for (var curr_inner_curve = 0; curr_inner_curve < max_num_curves_this_depth; curr_inner_curve++) {
+					curr_inner_curve = all_keys_this_depth[index_inner];
 
 					if (curr_inner_curve === curr_curve) continue; // skip over self
 
@@ -314,17 +319,12 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 					} else {
 
-						// var curr_other_cluster_key = curr_cluster_depth + ":" + curr_inner_curve;
+						// console.log("left ", curr_curve_samples);
+						// console.log("right ", all_curves[curr_cluster_depth][curr_inner_curve]);
 
-						// curr_distance = calc_distance(curr_curve_samples, all_curves[curr_other_cluster_key]);
-
-
-						console.log("left ", curr_curve_samples);
-						console.log("right ", all_curves[curr_cluster_depth][curr_inner_curve]);
-
-
-						console.log("about to call calc distance with curr_cluster_depth ",
-									curr_cluster_depth, " curr_inner_curve ", curr_inner_curve);
+						// console.log("about to call calc distance with curr_cluster_depth ", curr_cluster_depth, 
+						// 			" curr_curve ", curr_curve,
+						// 			" curr_inner_curve ", curr_inner_curve);
 
 						curr_distance = calc_distance(curr_curve_samples, all_curves[curr_cluster_depth][curr_inner_curve]);
 
@@ -475,9 +475,9 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 			// console.log("BBBOT --------- all_curves ", all_curves);
 
 
-			var keys_all_curves = Object.keys(all_curves);
+			// var keys_all_curves = Object.keys(all_curves);
 			
-			console.log("\n\nBOOOOTTTOMMM --------- keys_all_curves ", keys_all_curves);
+			// console.log("\n\nBOOOOTTTOMMM --------- keys_all_curves ", keys_all_curves);
 
 			// var next_cluster_depth_values = all_curves[next_cluster_depth];
 			var count_next_cluster_depth_values = Object.keys(all_curves[next_cluster_depth]).length;
@@ -488,12 +488,13 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 		} while (count_next_cluster_depth_values > 1);
 
-		console.log("BBBOT --------- hierarchical_cluster ", hierarchical_cluster);
-		console.log("BBBOT --------- all_clusters ", all_clusters);
+		// console.log("BBBOT --------- hierarchical_cluster ", hierarchical_cluster);
+		// console.log("BBBOT --------- all_clusters ", all_clusters);
+		// console.log("BBBOT --------- all_curves ", all_curves);
 
 		// all_curves
 
-		shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
+		// shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
 	};
 	that.launch_clustering = launch_clustering;
 
