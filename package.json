@@ -1,6 +1,6 @@
 {
   "name": "hierarchical-cluster",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "hierarchical-cluster of time-series data",
   "main": "src/hierarchical_cluster.js",
   "directories": {

@@ -236,6 +236,14 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 	// ---
 
+	var read_file_retrieve_json = function(input_filename, given_options) {
+
+		return shared_utils.read_file_retrieve_json(input_filename, given_options);
+	};
+	that.read_file_retrieve_json = read_file_retrieve_json;
+
+	// ---
+
 	var add_curve_to_cluster = function(source_curve, target_cluster, given_max_samples) {
 
 		for (var index = 0; index < given_max_samples; index++) {
@@ -447,7 +455,11 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 		// all_curves
 
-		// shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
+		shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
+		shared_utils.write_json_to_file("all_clusters.json", all_clusters, 'utf8');
+		shared_utils.write_json_to_file("all_curves.json", all_curves, 'utf8');
+
+		// ---
 	};
 	that.launch_clustering = launch_clustering;
 
