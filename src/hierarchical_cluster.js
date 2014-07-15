@@ -182,6 +182,12 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 			process.exit(8);
 		}
 
+		if (max_num_curves < 2) {
+
+			console.error("ERROR - you must have two or more curves, you set max_num_curves : ", max_num_curves);
+			process.exit(8);
+		}
+
 		set_flavor_random_curves(flavor_random);	// set relevant methods based on chosen data type
 
 		all_curves[curr_cluster_depth] = {}; // record placeholder object for current cluster depth counter
