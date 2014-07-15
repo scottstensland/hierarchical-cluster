@@ -31,10 +31,10 @@ var setup_one = {
 var setup_one_N_half = {
 
     // max_num_curves : 5000,     // number of curves
-    max_num_curves : 8,     // number of curves
+    max_num_curves : 3000,     // number of curves
     // max_num_curves : 17,     // number of curves
     // max_samples : 1000,       // number of data points per curve 
-    max_samples : 3,       // number of data points per curve 
+    max_samples : 300,       // number of data points per curve 
     min_value : -5, 
     max_value : 5,
     // flavor_random : "integer",
@@ -47,9 +47,9 @@ var setup_one_N_half = {
 var setup_two = {
 
     // max_num_curves : 5000,     // number of curves
-    max_num_curves : 3500,     // number of curves
+    max_num_curves : 500,     // number of curves
     // max_samples : 1000,       // number of data points per curve 
-    max_samples : 30,       // number of data points per curve 
+    max_samples : 30000,       // number of data points per curve 
     min_value : -1.0, 
     max_value : 1.0,
     // flavor_random : "integer",
@@ -57,7 +57,6 @@ var setup_two = {
     // flag_print : true,
     flag_print : false,
 };
-
 
 var setup_iii = {
 
@@ -75,16 +74,14 @@ var setup_iii = {
 
 var random_seed = 17;
 
-// shared_utils.show_curves();
-
 var hierarchical_cluster = hierarchical_cluster_obj.do_clustering(environment_mode);
 
 hierarchical_cluster.set_random_seed(random_seed); // optional - comment out if you want new random sequence each run
                                                    // make this call to assure random sequence is same across runs
 
 // hierarchical_cluster.gen_curves(setup_one);
-// hierarchical_cluster.gen_curves(setup_one_N_half);
-hierarchical_cluster.gen_curves(setup_two);
+hierarchical_cluster.gen_curves(setup_one_N_half);
+// hierarchical_cluster.gen_curves(setup_two);
 // hierarchical_cluster.gen_curves(setup_iii);
 
 
@@ -93,5 +90,8 @@ hierarchical_cluster.gen_curves(setup_two);
 // return;
 
 hierarchical_cluster.launch_clustering();
+
+// hierarchical_cluster.show_curves();
+
 
 console.log("<><><>  <><><>  <><><>   end of processing   <><><>  <><><>  <><><>");
