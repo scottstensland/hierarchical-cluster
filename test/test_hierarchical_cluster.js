@@ -34,7 +34,7 @@ var setup_one_N_half = {
     max_num_curves : 3000,     // number of curves
     // max_num_curves : 17,     // number of curves
     // max_samples : 1000,       // number of data points per curve 
-    max_samples : 300,       // number of data points per curve 
+    max_samples : 3000,       // number of data points per curve 
     min_value : -5, 
     max_value : 5,
     // flavor_random : "integer",

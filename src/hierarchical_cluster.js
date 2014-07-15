@@ -375,7 +375,7 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 					// allocate new curve to store this new cluster centroid
 
 					var new_curr_cluster_curve = new flavor_typed_array(max_samples);
-
+					/*
 					// console.log("are freshly minted typed arrays seeded with values 0 or what");
 
 					for (var index = 0; index < max_samples; index++) {
@@ -390,6 +390,7 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 								new_curr_cluster_curve[index]);
 						}
 					}
+					*/
 
 					// add into this new curve both curves of current pair of curves
 
