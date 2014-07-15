@@ -1,0 +1,26 @@
+{
+  "name": "hierarchical-cluster",
+  "version": "0.0.1",
+  "description": "hierarchical-cluster of time-series data",
+  "main": "src/hierarchical_cluster.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottstensland/hierarchical-cluster.git"
+  },
+  "keywords": [
+    "hierarchical-cluster",
+    "time-series"
+  ],
+  "author": "Scott Stensland <scottstensland@gmail.com> (http://catfoodnation.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottstensland/hierarchical-cluster/issues"
+  },
+  "homepage": "https://github.com/scottstensland/hierarchical-cluster"
+}
