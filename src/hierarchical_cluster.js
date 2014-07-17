@@ -461,9 +461,9 @@ module.exports.do_clustering = function(environment_mode) { // functional inheri
 
 		// all_curves
 
-		shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
-		shared_utils.write_json_to_file("all_clusters.json", all_clusters, 'utf8');
-		shared_utils.write_json_to_file("all_curves.json", all_curves, 'utf8');
+		// shared_utils.write_json_to_file("hierarchical_cluster.json", hierarchical_cluster, 'utf8');
+		// shared_utils.write_json_to_file("all_clusters.json", all_clusters, 'utf8');
+		// shared_utils.write_json_to_file("all_curves.json", all_curves, 'utf8');
 
 		// ---
 	};

@@ -110,12 +110,12 @@ hierarchical_cluster.gen_curves(setup_half);
 
 hierarchical_cluster.launch_clustering();
 
-// hierarchical_cluster.show_curves();
+hierarchical_cluster.show_curves();
 
 
-console.log("hierarchical_cluster ", hierarchical_cluster.read_file_retrieve_json("hierarchical_cluster.json", 'utf8'));
-console.log("all_clusters ", hierarchical_cluster.read_file_retrieve_json("all_clusters.json", 'utf8'));
-console.log("all_curves ", hierarchical_cluster.read_file_retrieve_json("all_curves.json", 'utf8'));
+// console.log("hierarchical_cluster ", hierarchical_cluster.read_file_retrieve_json("hierarchical_cluster.json", 'utf8'));
+// console.log("all_clusters ", hierarchical_cluster.read_file_retrieve_json("all_clusters.json", 'utf8'));
+// console.log("all_curves ", hierarchical_cluster.read_file_retrieve_json("all_curves.json", 'utf8'));
 
 
 console.log("<><><>  <><><>  <><><>   end of processing   <><><>  <><><>  <><><>");
